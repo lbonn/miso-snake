@@ -117,12 +117,12 @@ viewModel NotStarted = rootBase [ text_ [ x_ $ px (width / 2)
                                     ] [ text "press SPACE to start" ]
                             ]
 viewModel Started{..} =
-  let scoreLbl = text_ [ x_ $ px 10
-                       , y_ $ px (height - 10)
-                       , textStyle
-                       ] [ text $ ms $ show score ]
-      in rootBase $ scoreLbl : maybe [] (\c -> [cherrySvg c]) cherry ++ snakeSvg snake
+  rootBase $ scoreLbl : maybe [] (\c -> [cherrySvg c]) cherry ++ snakeSvg snake
   where
+    scoreLbl = text_ [ x_ $ px 10
+                     , y_ $ px (height - 10)
+                     , textStyle
+                     ] [ text $ ms $ show score ]
     cherrySvg (x, y) = ellipse_ [ cx_ $ px x
                                 , cy_ $ px y
                                 , rx_ $ px cherryRadius
