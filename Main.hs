@@ -94,9 +94,9 @@ initSnake = Snake { shead = h, stail = t, direction = R }
 -- | Render a model
 rootBase :: [View a] -> View a
 rootBase content = div_ [] [ svg_ [ height_ $ px height
-                              , width_ $ px width
-                              ] [ g_  [] (bg : content) ]
-                       ]
+                                  , width_ $ px width
+                                  ] [ g_  [] (bg : content) ]
+                           ]
   where
     bg = rect_ [ width_ (px width), height_ (px height) ] []
 
@@ -112,10 +112,10 @@ px e = ms $ show e ++ "px"
 
 viewModel :: Model -> View Msg
 viewModel NotStarted = rootBase [ text_ [ x_ $ px (width / 2)
-                                    , y_ $ px (height / 2)
-                                    , textStyle
-                                    ] [ text "press SPACE to start" ]
-                            ]
+                                        , y_ $ px (height / 2)
+                                        , textStyle
+                                        ] [ text "press SPACE to start" ]
+                                ]
 viewModel Started{..} =
   rootBase $ scoreLbl : maybe [] (\c -> [cherrySvg c]) cherry ++ snakeSvg snake
   where
