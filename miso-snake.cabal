@@ -1,6 +1,8 @@
 name:                miso-snake
 version:             0.1.0.0
 synopsis:            Snake game, using miso
+license:             MIT
+license-file:        LICENSE
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
