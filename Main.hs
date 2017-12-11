@@ -34,6 +34,7 @@ main :: IO ()
 main = startApp App {..}
   where
     initialAction = NoOp
+    mountPoint = Nothing
     model  = NotStarted
     update = updateModel
     view   = viewModel
